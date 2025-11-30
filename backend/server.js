@@ -13,6 +13,9 @@ connectDB();
 
 // Route files
 const auth = require('./routes/auth');
+const recipeRoutes=require("./routes/recipe.route.js")
+ 
+
 
 const app = express();
 
@@ -37,6 +40,9 @@ app.use(cookieParser());
 
 // Mount routers
 app.use('/api/v1/auth', auth);
+//recipe router
+app.use("/api/recipes",recipeRoutes);
+
 
 // Error handler middleware
 app.use(errorHandler);
